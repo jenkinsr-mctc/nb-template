@@ -18,7 +18,7 @@ export default class MainScreen extends Component {
         </Header>
         <Content>
           <Text>
-            This is Content Section
+            This is The Content Section
           </Text>
         </Content>
         <Footer>
