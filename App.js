@@ -6,7 +6,7 @@ import MainScreen from './Screens/MainScreen';
 import SecondScreen from './Screens/SecondScreen';
 import CameraScreen from './Screens/CameraScreen';
 
-import { Container, Content, View, Text } from 'native-base';
+import { Container, Content, View, Text, Root } from 'native-base';
 import { StyleSheet } from 'react-native';
 import Swiper from 'react-native-swiper';
 
@@ -47,28 +47,30 @@ export default class App extends React.Component {
     }
 
     return (
-      <Container>
-        <Content>
-          <Swiper loop={false} showsPagination={false} >
+      <Root>
+        <Container>
+          <Content>
+            <Swiper loop={false} showsPagination={false} >
 
-            <View style={styles.screenDefault}>
-              <Text style={styles.screenText}>Main Screen</Text>
-            </View>
+              <View style={styles.screenDefault}>
+                <Text style={styles.screenText}>Main Screen</Text>
+              </View>
 
-            <CameraScreen />
-            
-            <View style={styles.screenDefault}>
-              <Text style={styles.screenText}>Screen Two</Text>
-            </View>
-            
-            <View style={styles.screenDefault}>
-              <Text style={styles.screenText}>Third Screen</Text>
-            </View>
+              <CameraScreen />
+              
+              <View style={styles.screenDefault}>
+                <Text style={styles.screenText}>Screen Two</Text>
+              </View>
+              
+              <View style={styles.screenDefault}>
+                <Text style={styles.screenText}>Third Screen</Text>
+              </View>
 
 
-          </Swiper>
-        </Content>
-      </Container>
+            </Swiper>
+          </Content>
+        </Container>
+      </Root>
     );
   }
 }
