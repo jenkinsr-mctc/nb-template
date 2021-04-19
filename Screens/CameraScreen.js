@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Camera } from 'expo-camera';
 
@@ -11,6 +11,7 @@ const CameraScreen = () => {
 
     const [hasPermission, setPermission] = useState(null);
     const [type, setType] = useState(Camera.Constants.Type.back);
+    const cameraRef = useRef();
 
 
     useEffect(() => {
@@ -30,7 +31,7 @@ const CameraScreen = () => {
 
     return (
       <View style={styles.container}>
-          <Camera style={styles.camera} type={type}>
+          <Camera style={styles.camera} type={type} ref={cameraRef}>
               <Header searchBar rounded style={{backgroundColor: 'transparent'}}>
                 <View style={{flexDirection: 'row', flex: 4, alignItems: 'center'}} >
                     <Icon type="AntDesign" name="instagram" style={{ color: 'white', fontSize: 30}} />
